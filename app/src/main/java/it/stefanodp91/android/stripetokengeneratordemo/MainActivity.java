@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Note that if the data in the widget is either incomplete or
     // fails client-side validity checks, the Card object will be null.
     private CardInputWidget mCardInputWidget;
-    private Button mSaveBtn;
+    private Button mGenerateBtn;
     private ProgressBar mProgress;
     private TextView mResponseView;
 
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mResponseView = (TextView) findViewById(R.id.response);
 
-        // save button
-        mSaveBtn = (Button) findViewById(R.id.generate);
-        mSaveBtn.setOnClickListener(this);
+        // generate button
+        mGenerateBtn = (Button) findViewById(R.id.generate);
+        mGenerateBtn.setOnClickListener(this);
     }
 
     // create the card
@@ -70,12 +70,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = view.getId();
 
         if (id == R.id.generate) {
-            onSaveClickAction();
+            onGenerateClickAction();
         }
     }
 
     // perfom
-    private void onSaveClickAction() {
+    private void onGenerateClickAction() {
 
         mProgress.setVisibility(View.VISIBLE); // show a progress
 
